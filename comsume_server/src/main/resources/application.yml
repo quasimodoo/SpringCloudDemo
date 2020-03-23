@@ -1,0 +1,12 @@
+server:
+  port: 8000
+logging:
+  level:
+    root: info
+spring:
+  application:
+    name: comsume-server # 在eureka中此值作为vipaddress,在发现服务时使用
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/

@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    platform: h2
+    schema: classpath:schema.sql
+    data: classpath:data.sql
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  application:
+    name: product-server # 在eureka中此值作为vipaddress,在发现服务时使用
+logging:
+  level:
+    root: info
+    org.hibernate: info
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/
